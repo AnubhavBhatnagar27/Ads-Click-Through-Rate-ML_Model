@@ -112,3 +112,8 @@ df = df.dropna(subset=['impressions', 'clicks', 'channel_name'])
 df['channel_name'] = df['channel_name'].astype(str)
 sns.lmplot(x = "impressions", y = "clicks", data = df, fit_reg=False, hue='channel_name')  
 plt.show()
+
+# Day 3 Perform EDA
+correlation_matrix = df.corr()
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
+plt.show()
